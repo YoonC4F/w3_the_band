@@ -5,21 +5,21 @@ var navItems = document.getElementsByClassName("nav-item");
 // console.log(navButton);
 // 1. navigation
 function toggle(callback) {
-    if(getComputedStyle(header).height == '48px'){
+    if(getComputedStyle(header).height == '46px'){
         Object.assign(header.style,{
-            height: 'calc(48px * 5)',
+            height: 'calc(46px * 5)',
             transition: 'height 0.2s linear',
             // overflow: 'visible'
         });
     }
     else {
         Object.assign(header.style,{
-            height: '48px',
+            height: '46px',
             transition: 'height 0.2s linear',
             overflow: 'hidden'
         });
     }
-    if(getComputedStyle(header).height == '48px'){
+    if(getComputedStyle(header).height == '46px'){
         setTimeout(function() {
             Object.assign(header.style,{
                 overflow: 'visible'
@@ -33,10 +33,25 @@ navButton.onclick = toggle;
 for(var navItem of navItems){
     navItem.onclick = function(){
         Object.assign(header.style,{
-            height: '48px',
+            height: '46px',
             overflow: 'hidden'
         });
     }   
+}
+// console.log(navItems[4]);
+navItems[4].addEventListener('mouseover', function(){
+    Object.assign(header.style,{
+        overflow: 'visible'
+    });
+})
+function myFunction(){
+    var w = window.innerWidth;
+    if(w>600){
+        Object.assign(header.style,{
+            height: '46px',
+            overflow: 'hidden'
+        });
+    }
 }
 
 // 2.slider
